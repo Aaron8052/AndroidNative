@@ -1,5 +1,5 @@
 # AndroidNative
- Android Native Plugin (.jar) for Unity by Aaron (FengYan)
+ Android Native Plugin for Unity by Aaron (FengYan)
  
 ## 目前处于开发状态！！！
 
