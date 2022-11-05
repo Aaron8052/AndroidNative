@@ -8,6 +8,8 @@
 
 作者：Aaron（AKA. FengYan, 枫炎）
 
+开源协议：[MIT License](https://github.com/Aaron8052/AndroidNative/blob/main/LICENSE)
+
 # 信息
 
 ### IDE
