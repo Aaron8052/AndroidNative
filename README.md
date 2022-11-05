@@ -13,7 +13,7 @@
 # 信息
 
 ### IDE
-Android Studio Dolphin | 2021.3.1 Patch 1
+[(Windows) Android Studio Dolphin | 2021.3.1 Patch 1](https://redirector.gvt1.com/edgedl/android/studio/install/2021.3.1.17/android-studio-2021.3.1.17-windows.exe)
 
 ### SDK版本
 23（Android 6.0）
