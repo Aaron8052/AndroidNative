@@ -1,4 +1,4 @@
-package com.aaronj.androidnative;
+package com.AaronJ.androidnative;
 
 import org.junit.Test;
 

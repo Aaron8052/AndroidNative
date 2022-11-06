@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace 'com.aaronj.androidnative'
+    namespace 'com.AaronJ.androidnative'
     compileSdk 32
 
     defaultConfig {
-        minSdk 23
-        targetSdk 32
+        minSdk 16
+        targetSdk 23
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -24,6 +24,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildToolsVersion '33.0.0'
 }
 
 dependencies {
