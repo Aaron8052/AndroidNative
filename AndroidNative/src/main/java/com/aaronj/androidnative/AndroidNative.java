@@ -1,4 +1,4 @@
-package com.aaronj.androidnative;
+package com.AaronJ.androidnative;
 
 import android.content.Intent;
 import android.net.Uri;
