@@ -23,7 +23,7 @@ Java
 
 ## Setup
 
-### 选择一（不可用，插件目前仍处于开发状态）
+### 选择一
 
 - 前往 [Release](https://github.com/Aaron8052/AndroidNative/releases) 直接下载.aar文件导入到Unity项目的的Asset/Plugins文件夹
 
