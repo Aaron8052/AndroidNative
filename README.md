@@ -39,4 +39,12 @@ Java
 
 - 设置插件平台为仅Android
 
-- 创建并编写一个C#脚本用于调用.aar插件中的函数（方法）
+- 创建并编写一个C#脚本用于调用.aar插件中的函数（方法）:
+
+`public void Share(String title, String message, String url, String imagePath)`
+
+`public void Share(String message)`
+
+`public void Share(String title, String message)`
+
+`public void Share(String title, String message, String url)`
