@@ -1,5 +1,5 @@
 # AndroidNative
- Android Native Plugin for Unity by Aaron (FengYan)
+ Android Native Plugin for Unity
 
 # 简介
 适用于Unity引擎的安卓端Native插件，后续会开发更多功能，敬请期待
