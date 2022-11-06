@@ -48,3 +48,7 @@ Java
 `public void Share(String title, String message, String url)`
 
 - 懒得写脚本的话可以到 [Release](https://github.com/Aaron8052/AndroidNative/releases) 找写好的 AndroidNative.cs和 AndroidNative.aar直接用
+
+# 注意事项
+
+- 如果你的项目的Taget SDK 和 Min SDK 与此插件不一致，则需Clone工程修改SDK版本后自行编译aar
