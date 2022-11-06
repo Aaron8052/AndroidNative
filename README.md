@@ -1,10 +1,8 @@
 # AndroidNative
- Android Native Plugin for Unity by Aaron (FengYan)
- 
-## 目前处于开发状态！！！
+ Android Native Plugin for Unity
 
 # 简介
-适用于Unity引擎的安卓端Native分享插件
+适用于Unity引擎的安卓端Native插件，后续会开发更多功能，敬请期待
 
 作者：Aaron（AKA. FengYan, 枫炎）
 
@@ -23,11 +21,30 @@ Java
 
 # 使用
 
-### 选择一（不可用，插件目前仍处于开发状态）
-- 前往 [Release](https://github.com/Aaron8052/AndroidNative/releases) 直接下载.jar文件导入到Unity项目的的Asset/Plugins文件夹
+## Setup
 
-- 在Unity中编写对应的C# Helper类并使用AndroidJavaClass以及AndroidJavaObject调用.jar插件中的函数（方法）
+### 选择一
+
+- 前往 [Release](https://github.com/Aaron8052/AndroidNative/releases) 直接下载.aar文件导入到Unity项目的的Asset/Plugins文件夹
 
 ### 选择二
 
 - Clone整个工程并使用上述的IDE打开，自行编译插件
+
+## 导入Unity
+
+- 将.aar插件导入到Unity项目的Assets/Plugins/Android中
+
+- 设置插件平台为仅Android
+
+- 创建并编写一个C#脚本用于调用.aar插件中的函数（方法）:
+
+`public void Share(String title, String message, String url, String imagePath)`
+
+`public void Share(String message)`
+
+`public void Share(String title, String message)`
+
+`public void Share(String title, String message, String url)`
+
+- 懒得写脚本的话可以到 [Release](https://github.com/Aaron8052/AndroidNative/releases) 找写好的 AndroidNative.cs和 AndroidNative.aar直接用
