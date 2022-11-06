@@ -27,8 +27,6 @@ Java
 
 - 前往 [Release](https://github.com/Aaron8052/AndroidNative/releases) 直接下载.aar文件导入到Unity项目的的Asset/Plugins文件夹
 
-- 在Unity中编写对应的C# Helper类并使用AndroidJavaClass以及AndroidJavaObject调用.aar插件中的函数（方法）
-
 ### 选择二
 
 - Clone整个工程并使用上述的IDE打开，自行编译插件
