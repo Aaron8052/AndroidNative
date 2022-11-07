@@ -23,4 +23,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildToolsVersion '30.0.3'
+
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    compileOnly files("com.unity3d.player")
+    compileOnly files("C:\\Program Files\\Unity\\Hub\\Editor\\2017.4.27f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\Variations\\mono\\Development\\Classes\\classes.jar")
 }

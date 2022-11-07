@@ -7,19 +7,16 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Build;
-import android.os.Bundle;
+
+import androidx.core.content.FileProvider;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Locale;
-
+import com.unity3d.player.UnityPlayer;
 
 public class AndroidNative extends Activity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
     static AndroidNative instance;
 
     public static AndroidNative getInstance(){
@@ -27,18 +24,29 @@ public class AndroidNative extends Activity {
             instance = new AndroidNative();
         return instance;
     }
+    Context getContext(){
+        return UnityPlayer.currentActivity;
+    }
+
+    private static final String AUTHORITY="com.AaronJ.androidnative";
 
 
     //region Share
     public void shareTextAndImage(String title, String message, String url, String imagePath){
-        Intent intent = new Intent(Intent.ACTION_SEND);//Create Send Action
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);//Create Send Action
         intent.putExtra(Intent.EXTRA_TITLE, message); //Add message as title
         intent.putExtra(Intent.EXTRA_TEXT, url);//Add url as text for user to copy
 
         File imageFile = new File(imagePath);//Get image file from path
         if(imageFile != null){
-            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(imageFile));//Add image file by path
-            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);//Grant read file permission
+            Uri imageUri = FileProvider.getUriForFile(this, AUTHORITY, imageFile);
+            intent.putExtra(Intent.EXTRA_STREAM, imageUri);//Add image file by path
+
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){//show preview for image if sdk level >= 29
+                intent.setData(imageUri);
+            }
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);//Grant read file permission
 
             //Get and set file extension (Type)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {  //For sdk version higher than 26
@@ -54,38 +62,31 @@ public class AndroidNative extends Activity {
             }
         }
 
-        startActivity(Intent.createChooser(intent, title));//Show Sharing Panel
+        getContext().startActivity(Intent.createChooser(intent, title));//Show Sharing Panel
     }
 
     public void shareText(String message){
         Intent intent = new Intent(Intent.ACTION_SEND);//Create Send Action
         intent.putExtra(Intent.EXTRA_TEXT, message);//Add message as text for user to copy
         intent.setType("text/plain");
-        startActivity(Intent.createChooser(intent,null));//Show Sharing Panel
+        getContext().startActivity(Intent.createChooser(intent,null));//Show Sharing Panel
     }
     public void shareTextWithTitle(String title, String message){
         Intent intent = new Intent(Intent.ACTION_SEND);//Create Send Action
         intent.putExtra(Intent.EXTRA_TEXT, message);//Add message as text for user to copy
         intent.setType("text/plain");
-        startActivity(Intent.createChooser(intent, title));//Show Sharing Panel
+        getContext().startActivity(Intent.createChooser(intent, title));//Show Sharing Panel
     }
     public void shareTextWithURL(String title, String message, String url){
         Intent intent = new Intent(Intent.ACTION_SEND);//Create Send Action
         intent.putExtra(Intent.EXTRA_TITLE, message); //Add message as title
         intent.putExtra(Intent.EXTRA_TEXT, url);//Add url as text for user to copy
         intent.setType("text/plain");
-        startActivity(Intent.createChooser(intent, title));//Show Sharing Panel
+        getContext().startActivity(Intent.createChooser(intent, title));//Show Sharing Panel
     }
     //endregion
 
     //region Utilities
-    Context context;
-    Context getContext(){
-        if(context == null)
-            context = this.getContext();
-        return context;
-    }
-
 
     public String getISOCountry(){
         return Locale.getDefault().getCountry();
