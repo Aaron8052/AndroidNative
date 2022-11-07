@@ -54,3 +54,7 @@ Java
 # 注意事项
 
 - 如果你的项目的Taget SDK 和 Min SDK 与此插件不一致，则需Clone工程修改SDK版本后自行编译aar
+
+# 参考信息
+
+https://developer.android.com/training/sharing/send#java
