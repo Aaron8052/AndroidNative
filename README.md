@@ -1,5 +1,7 @@
 # AndroidNative
  Android Native Plugin for Unity
+ 
+项目目前处于开发阶段中，不保证功能可用
 
 # 简介
 适用于Unity引擎的安卓端Native插件，后续会开发更多功能，敬请期待
