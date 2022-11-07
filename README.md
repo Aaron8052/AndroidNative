@@ -14,7 +14,7 @@
 [(Windows) Android Studio Dolphin | 2021.3.1 Patch 1](https://redirector.gvt1.com/edgedl/android/studio/install/2021.3.1.17/android-studio-2021.3.1.17-windows.exe)
 
 ### SDK版本
-Target: 23（Android 6.0）
+Target: 30（Android 11.0）
 Min: 16（Android 4.1）
 ### 编程语言
 Java
